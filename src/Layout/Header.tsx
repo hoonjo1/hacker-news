@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { setStorage } from '../utils/storage';
 interface Props {
+  isDark: boolean;
   setIsDark: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Header = ({ setIsDark }: Props) => {
+const Header = ({ isDark, setIsDark }: Props) => {
   const handleTheme = () => {
     setIsDark(prev => !prev);
+    setStorage('isDarkMode', !isDark);
   };
 
   return (
