@@ -1,14 +1,17 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Home from "./pages/Home/";
-import Test from "./pages/Test";
+import NotFound from './pages/NotFound';
+
+import Home from './pages/Home/';
 
 export function Router() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/test" element={<Test />} />
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
