@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Header from './Header';
 import Nav from './Nav';
@@ -13,10 +14,17 @@ const Layout = ({ children, isDark, setIsDark }: Props) => {
   return (
     <>
       <Header isDark={isDark} setIsDark={setIsDark} />
-      {children}
+      <Content>{children}</Content>
       <Nav />
     </>
   );
 };
 
 export default Layout;
+
+const Content = styled.div`
+  width: 100%;
+  margin-top: 8vh;
+  padding-bottom: 13vh;
+  position: absolute;
+`;

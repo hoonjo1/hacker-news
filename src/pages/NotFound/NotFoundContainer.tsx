@@ -9,7 +9,7 @@ export default ErrorContainer;
 
 const Container = styled.div`
   width: 100%;
-  height: 82.837838vh;
+  height: 79vh;
   background-color: ${props => props.theme.bgColor};
   display: flex;
   align-items: center;

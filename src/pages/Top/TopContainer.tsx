@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const HomeContainer = () => {
-  return <Container>Home</Container>;
+const TopContainer = () => {
+  return <Container>TOP</Container>;
 };
 
-export default HomeContainer;
+export default TopContainer;
 
 const Container = styled.div`
   width: 100%;
