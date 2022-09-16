@@ -15,31 +15,37 @@ const Header = ({ isDark, setIsDark }: Props) => {
   };
 
   return (
-    <HeaderBox>
-      <IconBox>
-        <Logo />
-      </IconBox>
-      <IconBox>
-        <Mode onClick={handleTheme} />
-      </IconBox>
-    </HeaderBox>
+    <Wapper>
+      <HeaderBox>
+        <IconBox>
+          <Logo />
+        </IconBox>
+        <IconBox>
+          <Mode onClick={handleTheme} />
+        </IconBox>
+      </HeaderBox>
+    </Wapper>
   );
 };
 
 export default Header;
 
-const HeaderBox = styled.div`
-  display: flex;
-  justify-content: space-between;
+const Wapper = styled.div`
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 5;
   width: 100%;
   height: 8vh;
   border-bottom: 2px solid ${props => props.theme.borderColor};
   background-color: ${props => props.theme.bgColor};
+`;
+
+const HeaderBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  max-width: 1256px;
+  height: 100%;
+  margin: 0 auto;
 `;
 
 const IconBox = styled.div`

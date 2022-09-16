@@ -13,32 +13,38 @@ import {
 
 const Nav = () => {
   return (
-    <NavBox>
-      {NAV_ICON.map(route => (
-        <IconBox key={route.description} to={route.path}>
-          {route.icon}
-          <Description>{route.description}</Description>
-        </IconBox>
-      ))}
-    </NavBox>
+    <Wapper>
+      <NavBox>
+        {NAV_DATA.map(route => (
+          <IconBox key={route.description} to={route.path}>
+            {route.icon}
+            <Description>{route.description}</Description>
+          </IconBox>
+        ))}
+      </NavBox>
+    </Wapper>
   );
 };
 
 export default Nav;
 
-const NavBox = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+const Wapper = styled.div`
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
   z-index: 5;
   width: 100%;
   height: 13vh;
   border-top: 2px solid ${props => props.theme.borderColor};
   background-color: ${props => props.theme.navColor};
+`;
+
+const NavBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1256px;
+  height: 100%;
+  margin: 0 auto;
 `;
 
 const IconBox = styled(NavLink)`
@@ -48,7 +54,7 @@ const IconBox = styled(NavLink)`
   flex-direction: column;
   height: 100%;
   width: 10%;
-  gap: 5px;
+  gap: 8px;
 
   color: ${props => props.theme.textColor};
 
@@ -63,17 +69,18 @@ const IconBox = styled(NavLink)`
   }
 
   svg {
-    height: 40%;
+    height: 30%;
     width: 100%;
   }
 `;
 
 const Description = styled.span`
   color: ${props => props.theme.textColor};
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 400;
 `;
 
-const NAV_ICON = [
+const NAV_DATA = [
   {
     icon: <HomeIcon />,
     description: 'HOME',

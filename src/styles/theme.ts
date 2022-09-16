@@ -2,9 +2,10 @@ import { DefaultTheme } from 'styled-components';
 
 export const darkTheme: DefaultTheme = {
   textColor: '#ffffff',
-  bgColor: '#202020',
-  borderColor: '#7b7b7b',
-  navColor: '#2c2c2c',
+  bgColor: '#1a1b1e',
+  borderColor: '#2B2C31',
+  navColor: '#202020',
+  cardColor: '#2B2C31',
   accent: '#FF6B00',
 };
 
@@ -13,5 +14,6 @@ export const lightTheme: DefaultTheme = {
   bgColor: '#ffffff',
   borderColor: '#ececec',
   navColor: '#FFFFFF',
+  cardColor: '#F3F3F8',
   accent: '#FF6B00',
 };

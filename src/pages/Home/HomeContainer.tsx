@@ -1,8 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Card from '../../Components/Card';
+
 const HomeContainer = () => {
-  return <Container>Home</Container>;
+  return (
+    <Container>
+      <Card />
+    </Container>
+  );
 };
 
 export default HomeContainer;
