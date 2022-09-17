@@ -1,21 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Type } from 'types';
 import { urlRegex } from 'utils/regex';
 
-const Card = () => {
+interface Props {
+  results: Type;
+}
+
+const Card = ({ results }: Props) => {
   const url = 'https://readme.com/careers#product-lea';
   const converted = url.replace(urlRegex, '').split('/')[0];
   return (
     <Container>
       <Main>
-        <Title>
-          Generally Intelligent (YC S17) Is Hiring Remote Machine Learning
-          Engineer
-        </Title>
-        <By>BY. kanjun</By>
+        <Title>{results.title}</Title>
+        <Created>{results.time_ago}</Created>
       </Main>
       <Footer>
-        <Url>{converted}</Url>
+        <Url href={results.url}>{results.domain}</Url>
       </Footer>
     </Container>
   );
@@ -38,9 +40,9 @@ const Container = styled.div`
 
 const Main = styled.div`
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
-  height: 100%;
+  position: relative;
+  height: 85%;
   padding: 20px;
 `;
 
@@ -60,7 +62,9 @@ const Title = styled.span`
   font-weight: 700;
 `;
 
-const By = styled.span`
+const Created = styled.span`
+  position: absolute;
+  bottom: 10px;
   color: ${props => props.theme.textColor};
   font-size: 10px;
   font-weight: 700;

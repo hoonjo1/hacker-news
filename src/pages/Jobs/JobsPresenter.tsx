@@ -8,10 +8,11 @@ interface Props {
 }
 
 const JobPresenter = ({ results }: Props) => {
+  console.log(results);
   return (
     <Container>
-      {results.map(item => (
-        <Card key={item.id + item.time} />
+      {results.map((item, index) => (
+        <Card key={index} results={item} />
       ))}
     </Container>
   );
@@ -19,4 +20,10 @@ const JobPresenter = ({ results }: Props) => {
 
 export default JobPresenter;
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 20px 0px;
+`;
