@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { urlRegex } from '../../utils/regex';
+import { urlRegex } from 'utils/regex';
 
 const Card = () => {
   const url = 'https://readme.com/careers#product-lea';
@@ -25,8 +25,8 @@ export default Card;
 
 const Container = styled.div`
   position: relative;
-  width: 290px;
-  height: 350px;
+  width: 200px;
+  height: 250px;
   border-radius: 25px;
   background-color: ${props => props.theme.cardColor};
   transition: 0.2s;
@@ -56,18 +56,18 @@ const Footer = styled.div`
 
 const Title = styled.span`
   color: ${props => props.theme.textColor};
-  font-size: 30px;
+  font-size: 15px;
   font-weight: 700;
 `;
 
 const By = styled.span`
   color: ${props => props.theme.textColor};
-  font-size: 20px;
+  font-size: 10px;
   font-weight: 700;
 `;
 
 const Url = styled.a`
   color: ${props => props.theme.textColor};
-  font-size: 20px;
+  font-size: 5px;
   font-weight: 700;
 `;

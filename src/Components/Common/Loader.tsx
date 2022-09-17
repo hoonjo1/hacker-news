@@ -1,6 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Loader = () => {
+  return (
+    <Container>
+      <Load />
+    </Container>
+  );
+};
+
+export default Loader;
+
 const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -32,13 +42,3 @@ const Load = styled.div`
     }
   }
 `;
-
-const Loader = () => {
-  return (
-    <Container>
-      <Load />
-    </Container>
-  );
-};
-
-export default Loader;

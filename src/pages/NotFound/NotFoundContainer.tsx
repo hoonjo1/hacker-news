@@ -1,14 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Loader from '../../Components/Loader';
 
 const ErrorContainer = () => {
-  return (
-    <Container>
-      Page Not Found
-      <Loader />
-    </Container>
-  );
+  return <Container>Page Not Found</Container>;
 };
 
 export default ErrorContainer;

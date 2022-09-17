@@ -12,13 +12,11 @@ interface Props {
 
 const Layout = ({ children, isDark, setIsDark }: Props) => {
   return (
-    <>
-      <Main>
-        <Header isDark={isDark} setIsDark={setIsDark} />
-        <Content>{children}</Content>
-        <Nav />
-      </Main>
-    </>
+    <Main>
+      <Header isDark={isDark} setIsDark={setIsDark} />
+      <Content>{children}</Content>
+      <Nav />
+    </Main>
   );
 };
 
@@ -29,7 +27,6 @@ const Main = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  height: 100vh;
   background-color: ${props => props.theme.bgColor};
 `;
 
@@ -38,5 +35,5 @@ const Content = styled.div`
   width: 100%;
   margin-top: 8vh;
   padding-bottom: 13vh;
-  position: absolute;
+  background-color: ${props => props.theme.bgColor};
 `;
