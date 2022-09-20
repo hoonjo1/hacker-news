@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react';
 import fetchJobs from 'api/fetchJobs';
 import { Type } from 'types';
 
-const initializeState: {
-  results: Type[];
-  loading: boolean;
-} = {
+const initializeState: { results: Type[]; loading: boolean } = {
   results: [],
   loading: true,
 };
