@@ -5,7 +5,7 @@ import { useFetch } from 'hooks';
 import JobPresenter from './JobsPresenter';
 
 const JobContainer = () => {
-  const { results, loading } = useFetch();
+  const { results, loading } = useFetch('jobs');
 
   return loading && results.length === 0 ? (
     <Loader />

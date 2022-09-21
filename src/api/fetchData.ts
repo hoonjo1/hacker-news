@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { BASE_URL } from './utils';
 
-const fetchJobs = async () => {
+const fetchData = async (category: string) => {
   try {
-    const { data } = await axios.get(`${BASE_URL}jobs/1.json`);
+    const { data } = await axios.get(`${BASE_URL}${category}/1.json`);
     if (data) {
       return data;
     }
@@ -12,4 +12,4 @@ const fetchJobs = async () => {
   }
 };
 
-export default fetchJobs;
+export default fetchData;
