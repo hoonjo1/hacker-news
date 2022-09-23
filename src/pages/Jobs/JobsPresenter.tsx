@@ -8,7 +8,6 @@ interface Props {
 }
 
 const JobPresenter = ({ results }: Props) => {
-  console.log(results);
   return (
     <Container>
       {results.map((item, index) => (
