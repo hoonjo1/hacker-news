@@ -1,3 +1,13 @@
+# Hacker-news
+
+API : https://github.com/HackerNews/API
+
 #
 
-hacker-news
+TypeScript
+
+React
+
+Styled components
+
+#

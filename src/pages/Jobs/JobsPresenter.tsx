@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Card } from 'Components/Common';
-import { Type } from 'types';
+import { JobsType } from 'types';
 
 interface Props {
-  results: Type[];
+  results: JobsType[];
 }
 
 const JobPresenter = ({ results }: Props) => {

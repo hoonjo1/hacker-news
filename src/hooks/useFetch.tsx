@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { fetchData } from 'api';
-import { Type } from 'types';
+import { JobsType } from 'types';
 
-const initializeState: { results: Type[]; loading: boolean } = {
+const initializeState: { results: JobsType[]; loading: boolean } = {
   results: [],
   loading: true,
 };
@@ -23,9 +23,9 @@ const useFetch = (category: string) => {
   };
 
   useEffect(() => {
-    return () => {
-      response();
-    };
+    setTimeout(() => {
+      return response();
+    }, 500);
   }, []);
 
   return items;

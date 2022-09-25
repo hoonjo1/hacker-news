@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Type } from 'types';
+import { JobsType } from 'types';
 import { urlRegex } from 'utils/regex';
 
 interface Props {
-  results: Type;
+  results: JobsType;
 }
 
 const Card = ({ results }: Props) => {
