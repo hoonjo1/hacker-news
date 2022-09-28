@@ -1,21 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { fetchList } from 'api';
 
-const initializeState: { results: string[]; loading: boolean } = {
-  results: [],
-  loading: true,
-};
-
-const useList = (category: string) => {
-  const [items, setItems] = useState(initializeState);
-
+const useList = () => {
+  const { pathname } = useLocation();
+  const [idArray, setIdArray] = useState([]);
   const response = async () => {
     try {
-      const data = await fetchList(category);
-      setItems(({ results }) => ({
-        results: [...results, ...data],
-        loading: false,
-      }));
+      const data = await fetchList(pathname.split('/')[1]);
+      setIdArray(data);
     } catch (error) {
       console.error(error);
     }
@@ -27,7 +20,7 @@ const useList = (category: string) => {
     };
   }, []);
 
-  return items;
+  return idArray;
 };
 
 export default useList;

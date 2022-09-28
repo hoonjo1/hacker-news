@@ -4,7 +4,7 @@ import { BASE_URL_FIREBASE } from './utils';
 const fetchList = async (category: string) => {
   try {
     const { data } = await axios.get(
-      `${BASE_URL_FIREBASE}${category}stories.json?print=pretty`
+      `${BASE_URL_FIREBASE}${category}stories.json`
     );
     if (data) {
       return data;

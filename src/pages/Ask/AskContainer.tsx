@@ -1,11 +1,17 @@
 import React from 'react';
+import AskPresenter from './AskPresenter';
 import { Loader } from 'Components/Common';
-import { useList } from 'hooks';
+import { useList, useItems } from 'hooks';
 
 const AskContainer = () => {
-  const { results } = useList('ask');
-  console.log(results);
-  return <div>123</div>;
+  const idArray = useList();
+  const { results, loading } = useItems(idArray.slice(0, 4));
+
+  return loading && results.length === 0 ? (
+    <Loader />
+  ) : (
+    <AskPresenter results={results} />
+  );
 };
 
 export default AskContainer;
