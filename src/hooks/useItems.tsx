@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { fetchItem } from 'api';
+import { useState, useEffect, useCallback } from 'react';
+import { fetchItems } from 'api';
 import { ItemType } from 'types';
 
 const initializeState: { results: ItemType[]; loading: boolean } = {
@@ -7,26 +7,25 @@ const initializeState: { results: ItemType[]; loading: boolean } = {
   loading: true,
 };
 
-const useItems = (id: number[]) => {
+const useItems = async (id: number[]) => {
   const [items, setItems] = useState(initializeState);
 
-  const response = async () => {
-    try {
-      const data = await fetchItem(id);
-      setItems(({ results }) => ({
-        results: [...results, ...data],
-        loading: false,
-      }));
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    setTimeout(() => {
-      return response();
-    }, 500);
-  }, []);
+  // const response = useCallback(
+  //   async (id: number[]) => {
+  //     try {
+  //       if (items.results.length) {
+  //         const data = await fetchItems(id.slice(0, 4));
+  //         setItems(({ results }) => ({
+  //           results: [...results, ...data],
+  //           loading: false,
+  //         }));
+  //       }
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   },
+  //   [items.results.length]
+  // );
 
   return items;
 };
