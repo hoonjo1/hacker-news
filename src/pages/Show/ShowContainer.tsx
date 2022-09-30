@@ -4,7 +4,8 @@ import { useList, useItems } from 'hooks';
 
 const ShowContainer = () => {
   const idArray = useList();
-  const { results, loading } = useItems(idArray);
+  const { items, click } = useItems(idArray);
+  const { results, loading } = items;
 
   return loading && results.length === 0 ? (
     <Loader />

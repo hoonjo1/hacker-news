@@ -9,10 +9,18 @@ const initializeState: { results: ItemType[]; loading: boolean } = {
 
 const useItems = (idArray: number[]) => {
   const [items, setItems] = useState(initializeState);
+  const [count, setCount] = useState(0);
+
+  const isLastPage = Math.floor(idArray.length / 10);
+
+  const click = () => {
+    setItems(({ results }) => ({ results, loading: true }));
+    setCount(count + 10);
+  };
 
   const response = async (idArray: number[]) => {
     const data = await fetchItems(idArray);
-    if (data?.length) {
+    if (data) {
       setItems(({ results }) => ({
         results: [...results, ...data],
         loading: false,
@@ -21,10 +29,10 @@ const useItems = (idArray: number[]) => {
   };
 
   useEffect(() => {
-    response(idArray);
+    response(idArray.slice(count, count + 10));
   }, [idArray]);
 
-  return items;
+  return { items, click };
 };
 
 export default useItems;
