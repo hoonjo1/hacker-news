@@ -1,15 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { JobsType } from 'types';
-import { urlRegex } from 'utils/regex';
+import { ItemType } from 'types';
 
 interface Props {
-  results: JobsType;
+  results: ItemType;
 }
 
 const Card = ({ results }: Props) => {
-  const url = 'https://readme.com/careers#product-lea';
-  const converted = url.replace(urlRegex, '').split('/')[0];
   return (
     <Container>
       <Main>

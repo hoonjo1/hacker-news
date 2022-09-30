@@ -1,13 +1,14 @@
 export interface ItemType {
-  by: string;
-  descendants: number;
   id: number;
-  kids: number[];
-  score: number;
-  text: string;
-  time: number;
   title: string;
+  points?: number | null;
+  user?: string | null;
+  time: number;
+  time_ago: string;
+  comments_count: number;
   type: string;
+  url?: string;
+  domain?: string;
 }
 
 export default ItemType;

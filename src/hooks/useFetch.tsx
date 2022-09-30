@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { fetchData } from 'api';
-import { JobsType } from 'types';
+import { ItemType } from 'types';
 
-const initializeState: { results: JobsType[]; loading: boolean } = {
+const initializeState: { results: ItemType[]; loading: boolean } = {
   results: [],
   loading: true,
 };

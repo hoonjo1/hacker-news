@@ -1,25 +1,17 @@
 import React from 'react';
-import AskPresenter from './AskPresenter';
 import { Loader } from 'Components/Common';
-import { useList, useItems, useTest } from 'hooks';
-import { fetchItems } from 'api';
+import { useFetch } from 'hooks';
+import location from 'utils/location';
+
+import AskPresenter from './AskPresenter';
 
 const AskContainer = () => {
-  const idArray = useList();
-  const a = useTest(idArray.slice(0, 4));
+  const { results, loading } = useFetch(location());
 
-  // return loading && results.length === 0 ? (
-  //   <Loader />
-  // ) : (
-  //   <AskPresenter results={results} />
-  // );
-
-  return (
-    <div>
-      {idArray.map(x => (
-        <div key={x}>{x}</div>
-      ))}
-    </div>
+  return loading && results.length === 0 ? (
+    <Loader />
+  ) : (
+    <AskPresenter results={results} />
   );
 };
 
