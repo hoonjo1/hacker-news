@@ -1,4 +1,5 @@
 import Card from './Card';
 import Loader from './Loader';
+import MoreButton from './MoreButton';
 
-export { Card, Loader };
+export { Card, Loader, MoreButton };

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { LogoIcon, ModeIcon } from '../utils/icons';
-import { setStorage } from '../utils/storage';
+import { LogoIcon, ModeIcon } from 'utils/icons';
+import { setStorage } from 'utils/storage';
 interface Props {
   isDark: boolean;
   setIsDark: React.Dispatch<React.SetStateAction<boolean>>;

@@ -11,9 +11,9 @@ const useItems = (idArray: number[]) => {
   const [items, setItems] = useState(initializeState);
   const [count, setCount] = useState(0);
 
-  const isLastPage = Math.floor(idArray.length / 10);
+  const isLastPage = Math.floor(idArray.length / 10) * 10 === count + 10;
 
-  const click = () => {
+  const handleLoadmore = () => {
     setItems(({ results }) => ({ results, loading: true }));
     setCount(count + 10);
   };
@@ -30,9 +30,9 @@ const useItems = (idArray: number[]) => {
 
   useEffect(() => {
     response(idArray.slice(count, count + 10));
-  }, [idArray]);
+  }, [idArray, count]);
 
-  return { items, click };
+  return { items, isLastPage, handleLoadmore };
 };
 
 export default useItems;
