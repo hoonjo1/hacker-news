@@ -1,17 +1,24 @@
 import React from 'react';
-import { Loader } from 'Components/Common';
-import { useFetch } from 'hooks';
-import location from 'utils/location';
+import { useList, useItems } from 'hooks';
 
 import AskPresenter from './AskPresenter';
 
 const AskContainer = () => {
-  const { results, loading } = useFetch(location());
+  const idArray = useList();
+  const {
+    items: { results, loading },
+    isLastPage,
+    handleLoadmore,
+  } = useItems(idArray);
+  console.log(loading);
 
-  return loading && results.length === 0 ? (
-    <Loader />
-  ) : (
-    <AskPresenter results={results} />
+  return (
+    <AskPresenter
+      results={results}
+      loading={loading}
+      isLastPage={isLastPage}
+      handleLoadmore={handleLoadmore}
+    />
   );
 };
 

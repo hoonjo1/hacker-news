@@ -10,7 +10,7 @@ interface Props {
   isLastPage: boolean;
   handleLoadmore: () => void;
 }
-const AskPresenter = ({
+const ShowPresenter = ({
   results,
   loading,
   isLastPage,
@@ -28,7 +28,7 @@ const AskPresenter = ({
   );
 };
 
-export default AskPresenter;
+export default ShowPresenter;
 
 const Container = styled.div`
   width: 100%;

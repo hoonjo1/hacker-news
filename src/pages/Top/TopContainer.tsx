@@ -1,8 +1,13 @@
 import React from 'react';
+import { Loader } from 'Components/Common';
 import styled from 'styled-components';
 
 const TopContainer = () => {
-  return <Container>TOP</Container>;
+  return (
+    <Container>
+      <Loader />
+    </Container>
+  );
 };
 
 export default TopContainer;

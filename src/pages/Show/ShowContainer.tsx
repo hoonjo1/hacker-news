@@ -1,25 +1,25 @@
 import React from 'react';
-import { Loader, MoreButton } from 'Components/Common';
 import { useList, useItems } from 'hooks';
 
-const ShowContainer = () => {
+import ShowPresenter from './ShowPresenter';
+
+const AskContainer = () => {
   const idArray = useList();
   const {
     items: { results, loading },
     isLastPage,
     handleLoadmore,
   } = useItems(idArray);
+  console.log(loading);
 
-  return loading && results.length === 0 ? (
-    <Loader />
-  ) : (
-    <div>
-      {results.map(x => (
-        <div key={x.id}>{x.title}</div>
-      ))}
-      {!isLastPage && <MoreButton handleLoadmore={handleLoadmore} />}
-    </div>
+  return (
+    <ShowPresenter
+      results={results}
+      loading={loading}
+      isLastPage={isLastPage}
+      handleLoadmore={handleLoadmore}
+    />
   );
 };
 
-export default ShowContainer;
+export default AskContainer;

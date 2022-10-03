@@ -36,4 +36,5 @@ const Content = styled.div`
   margin-top: 8vh;
   padding-bottom: 13vh;
   background-color: ${props => props.theme.bgColor};
+  overflow: hidden;
 `;

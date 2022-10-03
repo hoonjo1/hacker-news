@@ -22,14 +22,12 @@ const Wapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   width: 100%;
   border-bottom: 2px solid ${props => props.theme.borderColor};
   background-color: ${props => props.theme.bgColor};
 `;
 
 const IconBox = styled.div`
-  height: 100%;
   width: 3%;
   margin: 10px auto;
 `;

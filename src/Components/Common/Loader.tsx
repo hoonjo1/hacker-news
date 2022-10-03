@@ -15,10 +15,12 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   position: fixed;
-  background-color: black;
-  opacity: 0.6;
+  background-color: ${props => props.theme.bgColor};
+
+  opacity: 0.7;
   z-index: 9;
   top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
