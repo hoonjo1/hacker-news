@@ -1,5 +1,6 @@
 import React from 'react';
 import { useList, useItems } from 'hooks';
+import { Loader } from 'Components/Common';
 
 import AskPresenter from './AskPresenter';
 
@@ -12,7 +13,9 @@ const AskContainer = () => {
   } = useItems(idArray);
   console.log(loading);
 
-  return (
+  return loading && results.length === 0 ? (
+    <Loader />
+  ) : (
     <AskPresenter
       results={results}
       loading={loading}
