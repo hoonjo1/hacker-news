@@ -1,11 +1,27 @@
 import React from 'react';
-import { Loader } from 'Components/Common';
 import styled from 'styled-components';
+import { Loader } from 'Components/Common';
+import useTest from 'hooks/useTest';
 
 const TopContainer = () => {
+  const { results, loading } = useTest();
+  console.log(results);
   return (
     <Container>
-      <Loader />
+      {loading || results.length === 0 ? (
+        <Loader />
+      ) : (
+        <div>
+          {results.map(x => (
+            <>
+              <p key={x.name}>{x.name}</p>
+              {x.test.map(c => (
+                <p key={c}>{c}</p>
+              ))}
+            </>
+          ))}
+        </div>
+      )}
     </Container>
   );
 };

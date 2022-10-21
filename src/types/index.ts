@@ -1,3 +1,4 @@
 import ItemType from './item';
+import Type from './test';
 
-export type { ItemType };
+export type { ItemType, Type };
