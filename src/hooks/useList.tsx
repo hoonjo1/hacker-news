@@ -12,8 +12,9 @@ const useList = () => {
   };
 
   useEffect(() => {
-    return () => {
-      response();
+    response();
+    () => {
+      return;
     };
   }, []);
 

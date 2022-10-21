@@ -11,7 +11,6 @@ const AskContainer = () => {
     isLastPage,
     handleLoadmore,
   } = useItems(idArray);
-  console.log(loading);
 
   return loading && results.length === 0 ? (
     <Loader />

@@ -30,6 +30,9 @@ const useItems = (idArray: number[]) => {
 
   useEffect(() => {
     response(idArray.slice(count, count + 10));
+    () => {
+      return;
+    };
   }, [idArray, count]);
 
   return { items, isLastPage, handleLoadmore };
