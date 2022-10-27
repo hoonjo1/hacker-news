@@ -25,5 +25,9 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
   }
+  -ms-overflow-style: none;
+  ::-webkit-scrollbar {
+  display: none;
+}
 `;
 export default GlobalStyle;

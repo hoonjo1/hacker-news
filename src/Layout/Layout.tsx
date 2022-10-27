@@ -33,8 +33,8 @@ const Main = styled.div`
 const Content = styled.div`
   max-width: 1256px;
   width: 100%;
+  min-height: 79vh;
   margin-top: 8vh;
   padding-bottom: 13vh;
   background-color: ${props => props.theme.bgColor};
-  overflow: hidden;
 `;
