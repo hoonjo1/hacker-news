@@ -2,9 +2,9 @@ import React from 'react';
 import { useList, useItems } from 'hooks';
 import { Loader } from 'Components/Common';
 
-import ShowPresenter from './ShowPresenter';
+import NewPresenter from './NewPresenter';
 
-const ShowContainer = () => {
+const NewContainer = () => {
   const idArray = useList();
   const {
     items: { results, loading },
@@ -15,7 +15,7 @@ const ShowContainer = () => {
   return loading && results.length === 0 ? (
     <Loader />
   ) : (
-    <ShowPresenter
+    <NewPresenter
       results={results}
       loading={loading}
       isLastPage={isLastPage}
@@ -24,4 +24,4 @@ const ShowContainer = () => {
   );
 };
 
-export default ShowContainer;
+export default NewContainer;

@@ -1,38 +1,27 @@
 import React from 'react';
-import styled from 'styled-components';
+import { useList, useItems } from 'hooks';
 import { Loader } from 'Components/Common';
-import useTest from 'hooks/useTest';
+
+import TopPresenter from './TopPresenter';
 
 const TopContainer = () => {
-  const { results, loading } = useTest();
-  console.log(results);
-  return (
-    <Container>
-      {loading || results.length === 0 ? (
-        <Loader />
-      ) : (
-        <div>
-          {results.map(x => (
-            <>
-              <p key={x.name}>{x.name}</p>
-              {x.test.map(c => (
-                <p key={c}>{c}</p>
-              ))}
-            </>
-          ))}
-        </div>
-      )}
-    </Container>
+  const idArray = useList();
+  const {
+    items: { results, loading },
+    isLastPage,
+    handleLoadmore,
+  } = useItems(idArray);
+
+  return loading && results.length === 0 ? (
+    <Loader />
+  ) : (
+    <TopPresenter
+      results={results}
+      loading={loading}
+      isLastPage={isLastPage}
+      handleLoadmore={handleLoadmore}
+    />
   );
 };
 
 export default TopContainer;
-
-const Container = styled.div`
-  width: 100%;
-  background-color: ${props => props.theme.bgColor};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-`;

@@ -19,11 +19,11 @@ const MoreButton = ({ handleLoadmore }: Props) => {
 export default MoreButton;
 
 const Wapper = styled.div`
+  padding: 2vh 0vh;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  border-bottom: 2px solid ${props => props.theme.borderColor};
   background-color: ${props => props.theme.bgColor};
 `;
 

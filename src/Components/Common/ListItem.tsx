@@ -24,6 +24,8 @@ const Container = styled.div`
   padding-right: 2.1621621vh;
   display: flex;
   justify-content: space-between;
+  border-bottom: 2px solid ${props => props.theme.borderColor};
+  color: ${props => props.theme.textColor};
 `;
 
 const Index = styled.span`
