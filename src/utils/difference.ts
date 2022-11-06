@@ -3,20 +3,20 @@ const difference = (createTime: number) => {
   const now = new Date();
   const difference = now.getTime() - end.getTime();
   const times = [
-    { time: '분', milliSeconds: 1000 * 60 },
-    { time: '시간', milliSeconds: 1000 * 60 * 60 },
-    { time: '일', milliSeconds: 1000 * 60 * 60 * 24 },
-    { time: '개월', milliSeconds: 1000 * 60 * 60 * 24 * 30 },
-    { time: '년', milliSeconds: 1000 * 60 * 60 * 24 * 365 },
+    { time: 'minute', milliSeconds: 1000 * 60 },
+    { time: 'hour', milliSeconds: 1000 * 60 * 60 },
+    { time: 'day', milliSeconds: 1000 * 60 * 60 * 24 },
+    { time: 'month', milliSeconds: 1000 * 60 * 60 * 24 * 30 },
+    { time: 'year', milliSeconds: 1000 * 60 * 60 * 24 * 365 },
   ].reverse();
 
   for (const value of times) {
     const betweenTime = Math.floor(difference / value.milliSeconds);
     if (betweenTime > 0) {
-      return `${betweenTime}${value.time} 전`;
+      return `${betweenTime} ${value.time} ago`;
     }
   }
-  return '방금 전';
+  return 'A moment ago';
 };
 
 export default difference;
