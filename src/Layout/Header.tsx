@@ -36,7 +36,7 @@ const Wapper = styled.div`
   z-index: 5;
   width: 100%;
   height: 8vh;
-  border-bottom: 2px solid ${props => props.theme.borderColor};
+  border-bottom: 5px solid ${props => props.theme.borderColor};
   background-color: ${props => props.theme.bgColor};
 `;
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
-import Home from './pages/Home';
+// import Home from './pages/Home';
 import New from './pages/New';
 import Top from './pages/Top';
 import Show from './pages/Show';
@@ -12,7 +12,7 @@ import NotFound from './pages/NotFound';
 export function Router() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Navigate to="/top" />} />
       <Route path="/top" element={<Top />} />
       <Route path="/new" element={<New />} />
       <Route path="/show" element={<Show />} />

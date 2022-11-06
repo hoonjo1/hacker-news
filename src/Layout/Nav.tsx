@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 import {
-  HomeIcon,
+  // HomeIcon,
   TopIcon,
   NewIcon,
   ShowIcon,
@@ -34,7 +34,7 @@ const Wapper = styled.div`
   z-index: 5;
   width: 100%;
   height: 13vh;
-  border-top: 2px solid ${props => props.theme.borderColor};
+  border-top: 5px solid ${props => props.theme.borderColor};
   background-color: ${props => props.theme.navColor};
 `;
 
@@ -81,11 +81,11 @@ const Description = styled.span`
 `;
 
 const NAV_DATA = [
-  {
-    icon: <HomeIcon />,
-    description: 'HOME',
-    path: '/',
-  },
+  // {
+  //   icon: <HomeIcon />,
+  //   description: 'HOME',
+  //   path: '/',
+  // },
   {
     icon: <TopIcon />,
     description: 'TOP',

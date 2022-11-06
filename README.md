@@ -4,11 +4,11 @@
 
 > Hacker-news 웹애플리케이션
 
-| ⚙️  사용 기술 및 스택 |
-| --------------------- |
-| react                 |
-| TypeScript            |
-| styled-compoennts     |
+| ⚙️  사용 기술 스택 |
+| ------------------ |
+| react              |
+| TypeScript         |
+| styled-compoennts  |
 
 ---
 

@@ -1,14 +1,18 @@
 export interface ItemType {
   id: number;
-  title: string;
-  points?: number | null;
-  user?: string | null;
-  time: number;
-  time_ago: string;
-  comments_count: number;
+  deleted: boolean;
   type: string;
-  url?: string;
-  domain?: string;
+  by: string;
+  time: number;
+  dead: boolean;
+  parent: string;
+  poll: string;
+  kids: number;
+  url: string;
+  score: number;
+  title: string;
+  parts: string;
+  descendants: number;
 }
 
 export default ItemType;

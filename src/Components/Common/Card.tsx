@@ -11,10 +11,10 @@ const Card = ({ results }: Props) => {
     <Container>
       <Main>
         <Title>{results.title}</Title>
-        <Created>{results.time_ago}</Created>
+        <Created>{results.time}</Created>
       </Main>
       <Footer>
-        <Url href={results.url}>{results.domain}</Url>
+        <Url href={results.url}>{results.url}</Url>
       </Footer>
     </Container>
   );
