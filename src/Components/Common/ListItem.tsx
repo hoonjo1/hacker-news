@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import difference from 'utils/difference';
 import { ItemType } from 'types';
 
@@ -11,14 +12,16 @@ interface Props {
 const ListItem = ({ item, index }: Props) => {
   return (
     <Container>
-      <Index>{index + 1}</Index>
-      <Wapper>
-        <Title>{item.title}</Title>
-        <CreateTime>
-          <p>{item.descendants} comments</p>
-          <p>{difference(item.time)}</p>
-        </CreateTime>
-      </Wapper>
+      <LinkBox to={`/${item.id}`}>
+        <Index>{index + 1}</Index>
+        <Wapper>
+          <Title>{item.title}</Title>
+          <CreateTime>
+            <p>{item.descendants} comments</p>
+            <p>{difference(item.time)}</p>
+          </CreateTime>
+        </Wapper>
+      </LinkBox>
     </Container>
   );
 };
@@ -29,9 +32,13 @@ const Container = styled.div`
   padding-left: 2.4324324vh;
   padding-bottom: 1.524324vh;
   padding-right: 2.1621621vh;
+  border-bottom: 2px solid ${props => props.theme.borderColor};
+  color: ${props => props.theme.textColor};
+`;
+
+const LinkBox = styled(Link)`
   display: flex;
   align-items: center;
-  border-bottom: 2px solid ${props => props.theme.borderColor};
   color: ${props => props.theme.textColor};
 `;
 
@@ -43,7 +50,6 @@ const Wapper = styled.div`
 
 const Index = styled.span`
   flex-basis: 5.135135vh;
-  flex-shrink: 0;
   font-size: 3vh;
   margin-right: 1vh;
   font-weight: 400;

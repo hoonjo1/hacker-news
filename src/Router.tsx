@@ -7,6 +7,7 @@ import Top from './pages/Top';
 import Show from './pages/Show';
 import Ask from './pages/Ask';
 import Jobs from './pages/Jobs';
+import Detail from './pages/Detail';
 import NotFound from './pages/NotFound';
 
 export function Router() {
@@ -18,6 +19,7 @@ export function Router() {
       <Route path="/show" element={<Show />} />
       <Route path="/ask" element={<Ask />} />
       <Route path="/jobs" element={<Jobs />} />
+      <Route path="/:id" element={<Detail />} />
       <Route path="/*" element={<NotFound />} />
     </Routes>
   );
