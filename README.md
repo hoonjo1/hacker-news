@@ -14,7 +14,7 @@
 
 ###
 
-- 배포 주소 : [Link](https://fancy-capybara-34a15c.netlify.app/)
+- 배포 주소 : [Link](https://hacker-news-lake.vercel.app/)
 
 - 진행중
 
