@@ -1,10 +1,21 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchDetail } from 'api';
-import { ItemType } from 'types';
+import { DetailType } from 'types';
 
-const initializeState: { results: ItemType[]; loading: boolean } = {
-  results: [],
+const initializeState: { results: DetailType; loading: boolean } = {
+  results: {
+    by: '',
+    descendants: 0,
+    id: 0,
+    kids: [0],
+    score: 0,
+    text: '',
+    time: 0,
+    title: '',
+    type: '',
+    url: '',
+  },
   loading: true,
 };
 

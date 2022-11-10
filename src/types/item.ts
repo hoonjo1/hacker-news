@@ -1,4 +1,4 @@
-export interface ItemType {
+interface ItemType {
   id: number;
   deleted: boolean;
   type: string;
@@ -13,6 +13,7 @@ export interface ItemType {
   title: string;
   parts: string;
   descendants: number;
+  text: string;
 }
 
 export default ItemType;

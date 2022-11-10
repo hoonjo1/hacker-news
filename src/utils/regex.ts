@@ -1,1 +1,3 @@
-export const urlRegex = RegExp('^(http|https)://(www.)?');
+const urlRegex = RegExp('^(http|https)://(www.)?');
+
+export default urlRegex;

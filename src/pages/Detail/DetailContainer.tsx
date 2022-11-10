@@ -1,11 +1,13 @@
 import React from 'react';
+import { Loader } from 'Components/Common';
 import { useDetail } from 'hooks';
+
+import DetailPresenter from './DetailPresenter';
 
 const DetailContainer = () => {
   const { results, loading } = useDetail();
 
-  console.log(results);
-  return <div>123</div>;
+  return loading ? <Loader /> : <DetailPresenter results={results} />;
 };
 
 export default DetailContainer;
