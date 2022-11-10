@@ -1,21 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import date from 'utils/date';
-import innerHtml from 'utils/innerHtml';
+import { date, innerHtml } from 'utils';
 import { DetailType } from 'types';
+import { BackIcon } from 'Components/Icons';
 
 interface Props {
   results: DetailType;
 }
 
 const DetailPresenter = ({ results }: Props) => {
-  console.log(results);
   const navigate = useNavigate();
   return (
     <Container>
       <Wapper>
-        <div onClick={() => navigate(-1)}>back</div>
+        <Back onClick={() => navigate(-1)} />
         <Title>{results.title}</Title>
         <InfoBox>
           <Writer>
@@ -44,11 +43,16 @@ const Container = styled.div`
 `;
 
 const Wapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1vh;
-  margin-top: 5vh;
+  gap: 1.2vh;
+  padding: 20px;
   color: ${props => props.theme.textColor};
+`;
+
+const Back = styled(BackIcon)`
+  font-size: 3vh;
 `;
 
 const Title = styled.span`
@@ -78,6 +82,8 @@ const Created = styled.span`
 `;
 
 const Content = styled.div`
-  font-size: 2.3vh;
+  font-size: 2.1vh;
   font-weight: 400;
+  line-height: 1.4em;
+  opacity: 0.9;
 `;

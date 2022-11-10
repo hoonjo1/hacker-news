@@ -1,7 +1,7 @@
 import React from 'react';
 import { Loader } from 'Components/Common';
 import { useFetch } from 'hooks';
-import location from 'utils/location';
+import { location } from 'utils';
 
 import JobPresenter from './JobsPresenter';
 

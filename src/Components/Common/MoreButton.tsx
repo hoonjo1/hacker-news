@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MoreIcon } from 'utils/icons';
+import { MoreIcon } from 'Components/Icons';
 
 interface Props {
   handleLoadmore: () => void;
@@ -28,7 +28,7 @@ const Wapper = styled.div`
 `;
 
 const IconBox = styled.div`
-  width: 3%;
+  width: 3vh;
   margin: 10px auto;
 `;
 

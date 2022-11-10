@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import difference from 'utils/difference';
+import { difference } from 'utils';
 import { ItemType } from 'types';
 
 interface Props {

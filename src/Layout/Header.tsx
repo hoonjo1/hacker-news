@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { LogoIcon, ModeIcon } from 'utils/icons';
-import { setStorage } from 'utils/storage';
+import { LogoIcon, ModeIcon } from 'Components/Icons';
+import { setStorage } from 'utils';
 interface Props {
   isDark: boolean;
   setIsDark: React.Dispatch<React.SetStateAction<boolean>>;
@@ -46,6 +46,7 @@ const HeaderBox = styled.div`
   max-width: 1256px;
   height: 100%;
   margin: 0 auto;
+  padding: 5px;
 `;
 
 const IconBox = styled.div`

@@ -3,6 +3,7 @@ import { MdOutlineLightMode as ModeIcon } from 'react-icons/md';
 import { VscHome as HomeIcon } from 'react-icons/vsc';
 import { RiUser5Line as ShowIcon } from 'react-icons/ri';
 import { AiOutlineShopping as JobsIcon } from 'react-icons/ai';
+import { IoIosArrowBack as BackIcon } from 'react-icons/io';
 import {
   BsHandThumbsUp as TopIcon,
   BsPlusCircle as MoreIcon,
@@ -22,4 +23,5 @@ export {
   AskIcon,
   JobsIcon,
   MoreIcon,
+  BackIcon,
 };

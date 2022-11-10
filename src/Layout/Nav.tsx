@@ -3,13 +3,12 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 import {
-  // HomeIcon,
   TopIcon,
   NewIcon,
   ShowIcon,
   AskIcon,
   JobsIcon,
-} from '../utils/icons';
+} from 'Components/Icons';
 
 const Nav = () => {
   return (
