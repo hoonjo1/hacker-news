@@ -49,6 +49,7 @@ const Wapper = styled.div`
   gap: 1.2vh;
   padding: 20px;
   color: ${props => props.theme.textColor};
+  border-bottom: 2px solid ${props => props.theme.borderColor};
 `;
 
 const Back = styled(BackIcon)`

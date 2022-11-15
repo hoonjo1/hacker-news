@@ -12,7 +12,7 @@ interface Props {
 const ListItem = ({ item, index }: Props) => {
   return (
     <Container>
-      <LinkBox to={`/${item.id}`}>
+      <LinkBox to={`products/${item.id}`}>
         <Index>{index + 1}</Index>
         <Wapper>
           <Title>{item.title}</Title>
