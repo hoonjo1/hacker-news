@@ -19,7 +19,7 @@ export function Router() {
       <Route path="/show" element={<Show />} />
       <Route path="/ask" element={<Ask />} />
       <Route path="/jobs" element={<Jobs />} />
-      <Route path="/:category/products/:id" element={<Detail />} />
+      <Route path="/:category/item/:id" element={<Detail />} />
       <Route path="/*" element={<NotFound />} />
     </Routes>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useComments } from 'hooks';
+import { Loader } from 'Components/Common';
 import CommentPresenter from './CommentPresenter';
 
 interface Props {
@@ -7,8 +8,13 @@ interface Props {
 }
 
 const CommentContainer = ({ comments }: Props) => {
-  console.log(comments);
-  return <CommentPresenter />;
+  const { results, loading } = useComments(comments);
+
+  return loading && results.length === 0 ? (
+    <Loader />
+  ) : (
+    <CommentPresenter results={results} />
+  );
 };
 
 export default CommentContainer;
