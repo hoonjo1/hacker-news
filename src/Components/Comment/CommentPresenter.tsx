@@ -39,12 +39,13 @@ const Wapper = styled.div<Wapper>`
   display: flex;
   flex-direction: column;
   gap: 0.5vh;
-  padding: 1.3513513vh 2.7027027vh;
+  padding: 1.3vh 2.7vh;
   color: ${props => props.theme.textColor};
   margin-left: ${({ depth }) => `${depth * 20}px`};
-  border-bottom: 2px solid ${props => props.theme.borderColor};
 `;
 
 const Content = styled.div`
+  padding-bottom: 1vh;
+  border-bottom: 2px solid ${props => props.theme.borderColor};
   line-height: 1.4em;
 `;
