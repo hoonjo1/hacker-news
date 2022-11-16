@@ -12,7 +12,6 @@ const useItems = (idArray: number[]) => {
 
   const response = async (idArray: number[]) => {
     const data = await fetchComments(idArray);
-    console.log(data);
     if (data) {
       setItems(() => ({
         results: [...data],

@@ -4,5 +4,6 @@ import Loader from './Loader';
 import MoreButton from './MoreButton';
 import NotItem from './NotItem';
 import Info from './Info';
+import Error from './Error';
 
-export { Card, List, Loader, MoreButton, NotItem, Info };
+export { Card, List, Loader, MoreButton, NotItem, Info, Error };
