@@ -7,6 +7,7 @@ interface CommentType {
   text: string;
   time: number;
   type: string;
+  deleted: string;
 }
 
 export default CommentType;

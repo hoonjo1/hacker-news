@@ -5,23 +5,18 @@ import { CommentType } from 'types';
 import { Info } from 'Components/Common';
 
 const CommentPresenter = ({ results }: { results: CommentType[] }) => {
-  return (
-    <Container>
-      {results.map(comment => (
-        <Wapper key={comment.text} depth={comment.depth}>
+  const loopComment = (comment: CommentType) => {
+    return (
+      !comment.deleted && (
+        <Wapper depth={comment.depth}>
           <Info by={comment.by} date={date(comment.time)} />
-          <Content dangerouslySetInnerHTML={innerHtml(comment.text)}></Content>
-          {comment.kids &&
-            comment.kids.map(reComment => (
-              <Wapper key={reComment.text} depth={comment.depth}>
-                <Info by={reComment.by} date={date(reComment.time)} />
-                <div dangerouslySetInnerHTML={innerHtml(reComment.text)} />
-              </Wapper>
-            ))}
+          <Content dangerouslySetInnerHTML={innerHtml(comment.text)} />
+          {comment.kids && comment.kids.map(loopComment)}
         </Wapper>
-      ))}
-    </Container>
-  );
+      )
+    );
+  };
+  return <Container>{results.map(comment => loopComment(comment))}</Container>;
 };
 
 export default CommentPresenter;
@@ -33,6 +28,7 @@ interface Wapper {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 2vh;
   gap: 2vh;
 `;
 const Wapper = styled.div<Wapper>`
@@ -41,13 +37,27 @@ const Wapper = styled.div<Wapper>`
   gap: 0.5vh;
   padding: 1.3513513vh 2.7027027vh;
   color: ${props => props.theme.textColor};
-  margin-left: ${({ depth }) => `${depth * 30}px`};
+  margin-left: ${({ depth }) => `${depth * 20}px`};
   border-bottom: 2px solid ${props => props.theme.borderColor};
-  :nth-child(1) {
-    border-bottom: none;
-  }
 `;
 
 const Content = styled.div`
   line-height: 1.4em;
 `;
+
+// <Container>
+//   {results.map(comment => (
+//     <Wapper key={comment.text} depth={comment.depth}>
+//       <Info by={comment.by} date={date(comment.time)} />
+//       <Content dangerouslySetInnerHTML={innerHtml(comment.text)}></Content>
+//       {comment.kids &&
+//         !comment.deleted &&
+//         comment.kids.map(reComment => (
+//           <Wapper key={reComment.text} depth={comment.depth}>
+//             <Info by={reComment.by} date={date(reComment.time)} />
+//             <div dangerouslySetInnerHTML={innerHtml(reComment.text)} />
+//           </Wapper>
+//         ))}
+//     </Wapper>
+//   ))}
+// </Container>;
